@@ -10,10 +10,16 @@ let nameScore = document.getElementById("winner-name");
 let nameList = document.getElementById("winner-list");
 let index;
 // let index = 0;
+let myName = document.getElementById("name-input");
 let score = document.getElementById("score-value");
+let nameBtn = document.getElementById("name-btn");
 let time;
 
 go.addEventListener("click", startGame);
+
+// localStorage.setItem("score", JSON.stringify(score));
+// let scoreValue = localStorage.getItem("score");
+// console.log("scoreValue: ", JSON.parse(scoreValue));
 
 function startGame() {
     console.log("started");
@@ -33,7 +39,7 @@ function startGame() {
     // }
 
     // go.on('click', function() {
-        // location.reload();
+    // location.reload();
     // })
 }
 
@@ -41,7 +47,7 @@ function startGame() {
 function startTimer() {
     console.log(secondsLeft)
     count.textContent = secondsLeft;
-    time = setInterval(runClock, 1000)
+    time = setInterval(runClock, 1000);
 
 }
 
@@ -107,6 +113,10 @@ function checkAnswer() {
 function endGame() {
     main.innerHTML = "";
     clearInterval(time);
+    // go.addEventListener('click', startGame);
+    // if (endGame) {
+        // location.reload(go.addEventListener("click", startGame))
+    // }
 }
 
 // let startQuestions = 0;
@@ -114,16 +124,16 @@ function endGame() {
 
 let questions = [
     {
-        question: "How many questions are there?",
-
+        question: "How do you link a JavaScript file in an HTML file?",
+    
         answers: [
-            "1",
-            "2",
-            "3",
-            "4",
+            "<scripting>",
+            "<HTML.JS>",
+            "<script>",
+            "js"
         ],
-        correct: "4"
-    },
+        correct: "<script>"
+        },
     {
         question: "Where are the questions?",
 
@@ -135,6 +145,26 @@ let questions = [
         ],
         correct: "over there"
     },
+    {
+        question: "Where do you link your JavaScript file in your HTML file?",
+
+        answers: [
+            "the <div>",
+            "the <footer>",
+            "the <body>",
+            "the <title>"
+        ],
+        correct: "the <body>"
+    },
+    {
+        question: "JavaScrips is the same as Java",
+
+        answers: [
+            "true",
+            "false"
+        ],
+        correct: "false"
+    }
 ]
 
 // for (let i = 0; i < array.length; i++) {
@@ -153,17 +183,81 @@ function runClock() {
     }
 }
 
-function submitHandler(event) {
-    event.preventDefault();
+nameBtn.addEventListener("click", saveScore);
 
-    let name = document.getElementById("name-input").val();
-    let li = document.getElementsByTagName("li");
-    li.text(name);
-    nameList.append(li);
-    document.getElementById("name-input").val("");
-}
+function saveScore() {
+    
+    savedScores = JSON.parse(localStorage.getItem("savedScores") || "[]");
+    savedScores.push({
+        "name": myName.value,
+        "score": score.innerHTML,
+    })
 
-nameScore.on("submit", submitHandler);
+    localStorage.setItem("savedScores", JSON.stringify(savedScores));
+    location.reload();
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    var node = document.createElement('li');
+    node.appendChild(document.createTextNode('Scooter'));
+     
+    document.querySelector('ul').appendChild(node);
+});
+
+
+// function submitHandler(event) {
+// function nameBtn(event) {
+// event.preventDefault();
+
+// let name = document.getElementById("name-input").val();
+// let li = document.getElementsByTagName("li");
+// li.text(name);
+// nameList.append(li);
+// document.getElementById("name-input").val("");
+
+// if (submitHandler) {
+// }
+// }
+// localStorage.submitHandler();
+// function submitHandler() {
+//     let savedScore = {
+//         name: myName.value,
+//         score: score.value
+//     }
+// }
+
+// function renderLastScore() {
+//     let lastScore = JSON.parse(localStorage.getItem("savedScore"));
+
+//     if (lastScore !== null) {
+//         myName.innerHTML = lastScore.name;
+//         score.innerHTML = lastScore.score;
+//     } else {
+//         return;
+//     }
+// }
+
+// saveButton.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     submitHandler();
+//     renderLastScore();
+// });
+
+// function init() {
+//     renderLastScore();
+// }
+// init();
+
+
+// nameScore.on("submit", submitHandler);
+// nameBtn.on("submit", submitHandler);
+
+// console.log(nameScore)
+
+// function nameBtn() {
+
+// }
 
 // nameScore = "";
 // function increaseScore() {
