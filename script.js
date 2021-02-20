@@ -21,6 +21,7 @@ go.addEventListener("click", startGame);
 // let scoreValue = localStorage.getItem("score");
 // console.log("scoreValue: ", JSON.parse(scoreValue));
 
+// start game function
 function startGame() {
     console.log("started");
     secondsLeft = 50;
@@ -35,7 +36,7 @@ function startGame() {
     if (score < 10) {
         score++;
         // increaseScore();
-    }
+    } 
     // }
 
     // go.on('click', function() {
@@ -43,7 +44,7 @@ function startGame() {
     // })
 }
 
-
+// function to start the timer
 function startTimer() {
     console.log(secondsLeft)
     count.textContent = secondsLeft;
@@ -51,6 +52,7 @@ function startTimer() {
 
 }
 
+// sorts through the questions
 function buildQuestionCard() {
     // index = 0;
     ask.textContent = questions[index].question;
@@ -67,6 +69,7 @@ function buildQuestionCard() {
 
 }
 
+// checks if answers are correct
 function checkAnswer() {
     console.log(this.value);
 
@@ -190,12 +193,13 @@ function runClock() {
     count.textContent = secondsLeft;
 
     if (secondsLeft <= 0) {
-        secondsLeft = 0;
+        secondsLeft = 1;
     }
 }
 
 nameBtn.addEventListener("click", saveScore);
 
+// saves score
 function saveScore() {
     
     savedScores = JSON.parse(localStorage.getItem("savedScores") || "[]");
