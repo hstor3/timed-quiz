@@ -18,3 +18,9 @@ For the CSS file, I started out by centering everything and spacing things out s
 
 ## Deployed Link
 
+https://hstor3.github.io/timed-quiz/
+
+
+## Screenshot
+
+<img src="./screencapture-hstor3-github-io-timed-quiz-2021-02-20-15_06_56.png">
