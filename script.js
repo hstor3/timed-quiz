@@ -135,16 +135,27 @@ let questions = [
         correct: "<script>"
         },
     {
-        question: "Where are the questions?",
+        question: "A boolean typically represents true or false.",
 
         answers: [
-            "hiding",
-            "missing",
-            "over there",
-            "there aren't any",
+            "true",
+            "false",
         ],
-        correct: "over there"
+        correct: "true"
     },
+
+    {
+        question: "Which is the correct way to log something to the console?",
+
+        answers: [
+            "log.console()",
+            "console,log[]",
+            "add.to.console()",
+            "console.log()"
+        ],
+        correct: "console.log()"
+    },
+
     {
         question: "Where do you link your JavaScript file in your HTML file?",
 

@@ -18,17 +18,18 @@
     <aside id="score">Score: <span id="score-value">0</span></aside>
 
     <main id="main">
-        <section id="quiz-questions">This is where the questions will appear</section>
+        <section id="quiz-questions">Push start to begin the quiz</section>
 
-        <div id="answer-box"></div>
+        <div id="answer-box" class="answer-box"></div>
     </main>
     
     <button id="begin" class="start">Start</button>
 
-    <form id="winner-name">
+    <form id="winner-name" class="winner-name">
         <input type="text" class="name-input w-100" id="name-input" placeholder="Enter name here">
-        <button class="name-btn" id="name-btn">Add Name</button>
+        <button class="name-btn" id="name-btn">Add</button>
         <ul id="winner-list">
+            <h2>High Scores</h2>
         </ul>
     </form>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

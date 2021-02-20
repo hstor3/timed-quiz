@@ -57,7 +57,8 @@ main {
 }
 
 /* answer buttons */
-button {
+/* button */
+ .answer-box button {
     width: 20%;
     height: 5vw;
     border-radius: 3px;
@@ -117,8 +118,19 @@ ul {
 input {
     /* justify-items: center; */
     /* justify-content: center; */
-    /* margin-left: 1px; */
-    /* padding-left: 1px; */
-    /* padding-right: 80px; */
+    /* margin-left: 5px; */
+    /* padding-left: 2px; */
+    padding-right: 50px;
+    height: 3vw;
     
+}
+
+/* .name-btn */
+.winner-name button {
+    height: 50%;
+    width: 10%;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-weight: bolder;
+    font-size: 1vw;
 }
