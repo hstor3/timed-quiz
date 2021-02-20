@@ -32,7 +32,7 @@ aside {
 }
 
 #score {
-    padding-bottom: 1vw;
+    padding-bottom: 3vw;
 }
 
 /* questions and answers */
@@ -104,7 +104,14 @@ button:hover {
     /* padding-top: 10px; */
     padding-top: 2vw;
     padding-bottom: 2vw;
+    
+}
 
+ul {
+    list-style: none;
+    margin: auto;
+    padding-top: 6vw;
+    
 }
 
 input {

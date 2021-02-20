@@ -198,11 +198,15 @@ function saveScore() {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    
-    var node = document.createElement('li');
-    node.appendChild(document.createTextNode('Scooter'));
-     
-    document.querySelector('ul').appendChild(node);
+
+    savedScores = JSON.parse(localStorage.getItem("savedScores") || "[]");
+
+    for (let i = 0; i < savedScores.length; i++) {
+        var node = document.createElement('li');
+        let text = `${savedScores[i]["name"]} - ${savedScores[i]["score"]}` 
+        node.appendChild(document.createTextNode(text));
+        nameList.appendChild(node);
+    }  
 });
 
 
